@@ -1,0 +1,36 @@
+.taskBar{
+   border-bottom: 1px black solid;
+}
+.upRow{
+    align-items: center;
+    background: #a6a6a6;
+    padding: 15px 0px ;
+    border-bottom: 1px black solid;
+    height: 100px;
+}
+.dRow{
+ 
+    span{
+        font-size: 18px;
+        color: black;
+        font-weight: bold;
+    
+    }
+   
+}
+.compButton{
+    margin: 5px;
+}
+.upLink{
+    background-color: #007bff;
+    color: white;
+    padding: 9.5px;
+    border-radius: 4px;
+}
+.floatR{
+    float: right;
+}
+
+// .dnm2:nth-child(1){
+//     background-color: blue;
+// }

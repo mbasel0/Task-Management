@@ -1,0 +1,7 @@
+export const GET_TASKS ="/app/task/GET_TASKS"
+export const SET_TASKS ="/app/task/SET_TASKS"
+export const DELETE_TASK ="/app/task/DELETE_TASK"
+export const DELETE_TASK_COMPLETED ="/app/task/DELETE_TASK_COMPLETED"
+export const COMPLETE_TASK ="/app/task/ACCEPT_TASK"
+export const SET_TASK_COMPLETED ="/app/task/SET_TASK_COMPLETED"
+export const REJECT_TASK = "/app/task/REJECT_TASK"
