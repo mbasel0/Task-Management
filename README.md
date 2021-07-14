@@ -10,3 +10,8 @@ A bit responsive design with bootstrap and media query.
 
 Live Demo  ( Heroku )
 https://piscine-choucroute-42469.herokuapp.com
+
+Login Credentials 
+
+mary@company.com
+john@company.com
