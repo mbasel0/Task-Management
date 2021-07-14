@@ -15,5 +15,5 @@ There may be slowdowns because of heroku.
 
 Login Credentials 
 
-mary@company.com
-john@company.com
+mary@company.com -  Human resources department
+john@company.com -  Sales Departmant 
