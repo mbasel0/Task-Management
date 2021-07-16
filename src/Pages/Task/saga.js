@@ -1,7 +1,8 @@
-import { put, takeLatest, } from "redux-saga/effects";
+import { all, put, takeLatest, } from "redux-saga/effects";
 import { GET_TASKS, DELETE_TASK, COMPLETE_TASK, REJECT_TASK } from "./constants";
 import { setTasks,  deleteTaskCompleted,setTaskCompleted } from "./actions";
 import ApiStore, { } from "../../utils/request";
+import { findAllInRenderedTree } from "react-dom/test-utils";
 
 
 
@@ -21,6 +22,7 @@ export function* delTaskSaga(action) {
     yield put(deleteTaskCompleted(response.data.payload.id));
   }
   catch (error) {
+ 
   }
 }
 
@@ -30,6 +32,7 @@ export function* completeTaskSaga(action) {
     yield put(setTaskCompleted(response.data.payload));  
   }
   catch (error) {
+    alert("Sadece kendi departmanınıza ait ve beklemede olan taskleri tamamlayabilirsiniz.")
   }
 }
 
@@ -41,6 +44,7 @@ export function* rejectTaskSaga(action) {
     yield put(setTaskCompleted(response.data.payload));  
   }
   catch (error) {
+    alert("Sadece kendi departmanınıza ait ve beklemede olan taskleri reddedebilirsiniz.")
   }
 }
 

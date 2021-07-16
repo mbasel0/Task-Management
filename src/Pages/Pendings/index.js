@@ -35,7 +35,7 @@ export function PendingTasks({ getPendingsFunc, task, delTaskFunc, login }) {
       <TaskBarHeader />
       {task.pendings.map((item) => {
         return <TaskBar user={login.user} task={item} onDelete={delTaskFunc}  />
-      })};
+      })}
     </div>
   );
 }

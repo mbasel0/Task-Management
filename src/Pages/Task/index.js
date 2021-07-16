@@ -36,7 +36,7 @@ export function Task({ getTasksFunc, task, delTaskFunc, completeTaskFunc, reject
       <TaskBarHeader />
       {task.tasks.map((item) => {
         return <TaskBar task={item} onDelete={delTaskFunc} onComplete={completeTaskFunc} onReject={rejectTaskFunc} user={login.user} />
-      })};
+      })}
     </div>
   );
 }

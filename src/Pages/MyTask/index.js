@@ -35,7 +35,7 @@ export function MyTask({ getMyTasksFunc, task, delTaskFunc , login}) {
       <TaskBarHeader />
       {task.myTasks.map((item) => {
         return <TaskBar user={login.user} task={item} onDelete={delTaskFunc} />
-      })};
+      })}
     </div>
   );
 }

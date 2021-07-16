@@ -1,6 +1,6 @@
 import { put, takeLatest } from "redux-saga/effects";
 import { LOGIN } from "./constants";
-import { setUser } from "./actions";
+import {  setUser } from "./actions";
 import ApiStore, { setTokenService } from "../../../utils/request";
 import { push } from 'connected-react-router'
 
@@ -11,6 +11,7 @@ export function* loginSaga(action) {
     localStorage.setItem("token", response.data.payload.jwtToken);
     yield put(setUser(response.data.payload));
     yield put(push("/task"))
+  
   }
   catch (error) {
   }

@@ -1,6 +1,6 @@
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import React from "react";
-import { Col, Row, Button, Table } from "react-bootstrap";
+import { Col, Row, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import style from "./style.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -72,29 +72,21 @@ export default function TaskBar({ onDelete, onComplete, onReject, user, task }) 
                <div className={style.dRow}>
                   <span>{getStatus(status)}</span>
                   <div>
-                     {(user.department === assignedDepartment) &&
-                        <>
                            <Button className={"btn-sm btn-outline-warning btn-dark mr-1 mt-1 "} onClick={() => onComplete(id)}>
                               <FontAwesomeIcon icon={faCheckSquare} />
                            </Button>
                            <Button className={"btn-sm btn-outline-warning btn-dark mt-1 "} onClick={() => onReject(id)}>
                               <FontAwesomeIcon icon={faWindowClose} />
                            </Button>
-                        </> //frag
-                     }
                   </div>
                </div>
-               <div>
-                  {(user.id === task.user.id) &&
-                     <>
+               <div> 
                         <Button className={"btn-sm btn-outline-warning btn-dark mr-1 mt-1"} onClick={() => onDelete(id)}>
                            <FontAwesomeIcon icon={faTrashAlt} />
                         </Button >
                         <Link className={"btn btn-sm btn-outline-warning btn-dark mt-1 "} to={`/task/uptade/${id}`}>
                            <FontAwesomeIcon icon={faEdit} />
                         </Link>
-                     </>
-                  }
                </div>
             </Col>
          </Row>

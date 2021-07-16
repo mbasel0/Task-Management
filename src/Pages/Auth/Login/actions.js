@@ -1,4 +1,5 @@
-import {LOGIN,SET_USER} from "./constants";
+import {LOGIN,SET_USER,DENEME} from "./constants";
+
 
 export function login(values) {
   return {
