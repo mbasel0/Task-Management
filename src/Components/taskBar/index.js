@@ -87,42 +87,6 @@ export default function TaskBar({ onDelete, onComplete, onReject, user, task, })
             </Col>
          </Row>
       </div>
-
    )
 };
 
-{/* <Col>
-<Row className={style.upRow}>
-   <Col xl={"2"}>
-      <div className={style.dRow}>
-         <span>{getDep(assignedDepartment)}</span>
-      </div>
-   </Col>
-   <Col xl={"8"}>
-      <div className={style.dRow}>
-         <span>{description}</span>
-      </div>
-   </Col>
-   <Col xl={"2"}>
-      <div className={style.dRow}>
-         <span>{getStatus(status)}</span>
-         <div>
-                  <Button className={"btn-sm btn-outline-warning btn-dark mr-1 mt-1 "} onClick={() => onComplete(id)}>
-                     <FontAwesomeIcon icon={faCheckSquare} />
-                  </Button>
-                  <Button className={"btn-sm btn-outline-warning btn-dark mt-1 "} onClick={() => onReject(id)}>
-                     <FontAwesomeIcon icon={faWindowClose} />
-                  </Button>
-         </div>
-      </div>
-      <div> 
-               <Button className={"btn-sm btn-outline-warning btn-dark mr-1 mt-1"} onClick={() => onDelete(id)}>
-                  <FontAwesomeIcon icon={faTrashAlt} />
-               </Button >
-               <Link className={"btn btn-sm btn-outline-warning btn-dark mt-1 "} to={`/task/uptade/${id}`}>
-                  <FontAwesomeIcon icon={faEdit} />
-               </Link>
-      </div>
-   </Col>
-</Row>
-</Col> */}
