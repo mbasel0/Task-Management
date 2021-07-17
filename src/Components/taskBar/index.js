@@ -5,15 +5,16 @@ import { Link } from "react-router-dom";
 import style from "./style.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faEdit, faTrashAlt, faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import clsx from 'clsx'
 
 
-
-export default function TaskBar({ onDelete, onComplete, onReject, user, task }) {
+export default function TaskBar({ onDelete, onComplete, onReject, user, task, }) {
    const {
       assignedDepartment,
       description,
       id,
       status,
+      title,
    } = task;
 
    const getDep = (assignedDepartment) => {
@@ -35,62 +36,93 @@ export default function TaskBar({ onDelete, onComplete, onReject, user, task }) 
    }
 
    const getStatus = (status) => {
-      var taskStatus = status;
-      switch (parseInt(taskStatus)) {
-         case 0:
-            taskStatus = "Pending";
-            break;
+      switch (parseInt(status)) {
          case 1:
-            taskStatus = "Completed";
-            break;
+            return "Completed";
          case 2:
-            taskStatus = "Rejected";
-            break;
+            return "Rejected";
          default:
-            break;
+            return "Pending"
       }
-      return taskStatus
    }
 
-
+   console.log(style.status)
 
    return (
-
-      <Col>
-         <Row className={style.upRow}>
-            <Col xl={"2"}>
-               <div className={style.dRow}>
-                  <span>{getDep(assignedDepartment)}</span>
-               </div>
+      <div className={style.taskBar}>
+         <Row>
+            <Col lg={8} md={6} sm={12}>
+               <Row>
+                  <Col sm={"4"}>
+                     <div >
+                        <span>{getDep(assignedDepartment)}</span>
+                     </div>
+                  </Col>
+                  <Col sm={"4"}>
+                     <div >
+                        <span>{description}</span>
+                     </div>
+                  </Col>
+                  <Col sm={"4"}>
+                     <div >
+                        <span>{title}</span>
+                     </div>
+                  </Col>
+               </Row>
             </Col>
-            <Col xl={"8"}>
-               <div className={style.dRow}>
-                  <span>{description}</span>
-               </div>
-            </Col>
-            <Col xl={"2"}>
-               <div className={style.dRow}>
-                  <span>{getStatus(status)}</span>
-                  <div>
-                           <Button className={"btn-sm btn-outline-warning btn-dark mr-1 mt-1 "} onClick={() => onComplete(id)}>
-                              <FontAwesomeIcon icon={faCheckSquare} />
-                           </Button>
-                           <Button className={"btn-sm btn-outline-warning btn-dark mt-1 "} onClick={() => onReject(id)}>
-                              <FontAwesomeIcon icon={faWindowClose} />
-                           </Button>
-                  </div>
-               </div>
-               <div> 
-                        <Button className={"btn-sm btn-outline-warning btn-dark mr-1 mt-1"} onClick={() => onDelete(id)}>
-                           <FontAwesomeIcon icon={faTrashAlt} />
-                        </Button >
-                        <Link className={"btn btn-sm btn-outline-warning btn-dark mt-1 "} to={`/task/uptade/${id}`}>
-                           <FontAwesomeIcon icon={faEdit} />
-                        </Link>
-               </div>
+            <Col lg={4} md={6} sm={12}>
+               <Row>
+                  <Col sm={"6"}>
+                     <FontAwesomeIcon cursor="pointer" onClick={() => onReject(id)} icon={faWindowClose} color="#fa3f3f" />
+                     <FontAwesomeIcon cursor="pointer" onClick={() => onComplete(id)} className={"ml-2"} icon={faCheckSquare} color="#439e4a" />
+                     <FontAwesomeIcon cursor="pointer" className={"ml-2"} icon={faEdit} />
+                     <FontAwesomeIcon cursor="pointer" onClick={() => onDelete(id)} className={"ml-2"} icon={faTrashAlt} />
+                  </Col>
+                  <Col sm={"6"}>
+                     <div className={`${style.status} ${status === 2 ? style.rejected : style.completed} `}>
+                        <span>{getStatus(status)}</span>
+                     </div>
+                  </Col>
+               </Row>
             </Col>
          </Row>
-      </Col>
+      </div>
+
    )
 };
 
+{/* <Col>
+<Row className={style.upRow}>
+   <Col xl={"2"}>
+      <div className={style.dRow}>
+         <span>{getDep(assignedDepartment)}</span>
+      </div>
+   </Col>
+   <Col xl={"8"}>
+      <div className={style.dRow}>
+         <span>{description}</span>
+      </div>
+   </Col>
+   <Col xl={"2"}>
+      <div className={style.dRow}>
+         <span>{getStatus(status)}</span>
+         <div>
+                  <Button className={"btn-sm btn-outline-warning btn-dark mr-1 mt-1 "} onClick={() => onComplete(id)}>
+                     <FontAwesomeIcon icon={faCheckSquare} />
+                  </Button>
+                  <Button className={"btn-sm btn-outline-warning btn-dark mt-1 "} onClick={() => onReject(id)}>
+                     <FontAwesomeIcon icon={faWindowClose} />
+                  </Button>
+         </div>
+      </div>
+      <div> 
+               <Button className={"btn-sm btn-outline-warning btn-dark mr-1 mt-1"} onClick={() => onDelete(id)}>
+                  <FontAwesomeIcon icon={faTrashAlt} />
+               </Button >
+               <Link className={"btn btn-sm btn-outline-warning btn-dark mt-1 "} to={`/task/uptade/${id}`}>
+                  <FontAwesomeIcon icon={faEdit} />
+               </Link>
+      </div>
+   </Col>
+</Row>
+</Col> */}

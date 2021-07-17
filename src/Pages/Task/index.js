@@ -18,7 +18,7 @@ import { makeSelectLogin } from "../Auth/Login/selector";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faPlus, faWindowClose } from '@fortawesome/free-solid-svg-icons'
-import  DropDown  from "../../Components/DropDown";
+import DropDown from "../../Components/DropDown";
 
 
 
@@ -32,11 +32,11 @@ export function Task({ getTasksFunc, task, delTaskFunc, completeTaskFunc, reject
 
   return (
     <div className={styles.task}>
-      <DropDown/>
-      <TaskBarHeader />
-      {task.tasks.map((item) => {
+      {/* <DropDown/> */}  
+        <TaskBarHeader />  
+       {task.tasks.map((item) => {
         return <TaskBar task={item} onDelete={delTaskFunc} onComplete={completeTaskFunc} onReject={rejectTaskFunc} user={login.user} />
-      })}
+      })} 
     </div>
   );
 }

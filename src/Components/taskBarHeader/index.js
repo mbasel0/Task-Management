@@ -7,25 +7,44 @@ import style from "./style.module.scss";
 
 export default function TaskBarHeader({ brand, navItems, }) {
    return (
-
-      <Col>
-         <Row className={style.dnm2}>
-            <Col xl={"2"}>
-               <div className={style.dnm}>
-                  <span>Department</span>
-               </div>
+      <div className={style.taskBarHeader}>
+         <Row>
+            <Col lg={8} md={8} sm={12}>
+               <Row>
+                  <Col sm={"4"}>
+                     <div >
+                        <span>Department</span>
+                     </div>
+                  </Col>
+                  <Col sm={"4"}>
+                     <div >
+                        <span>Description</span>
+                     </div>
+                  </Col>
+                  <Col sm={"4"}>
+                     <div >
+                        <span >Title</span>
+                     </div>
+                  </Col>
+               </Row>
             </Col>
-            <Col xl={"8"}>
-               <div className={style.dnm}>
-                  <span>Information</span>
-               </div>
-            </Col>
-            <Col xl={"2"}>
-               <div className={style.dnm}>
-                  <span >Status</span>
-               </div>
+            <Col lg={4} md={4} sm={12}>
+               <Row>
+                  <Col sm={"6"}>
+                     <div >
+                        <span >Operation</span>
+                     </div>
+                  </Col>
+                  <Col sm={"6"}>
+                     <div >
+                        <span >Status</span>
+                     </div>
+                  </Col>
+               </Row>
             </Col>
          </Row>
-      </Col>
+      </div>
    )
 };
+
+
