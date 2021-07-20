@@ -12,7 +12,7 @@ export default function DropDown() {
 
    return (
       <Dropdown className={"mt-2 d-flex ml-2"} >
-         <Dropdown.Toggle className={"bg-warning"} variant="success" id="dropdown-basic">
+         <Dropdown.Toggle className={"bg-secondary"} variant="success" id="dropdown-basic">
             <FontAwesomeIcon icon={faFolderPlus} color="pink"/>
          </Dropdown.Toggle>
          <Dropdown.Menu>

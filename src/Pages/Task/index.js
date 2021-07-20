@@ -33,7 +33,7 @@ export function Task({ getTasksFunc, task, delTaskFunc, completeTaskFunc, reject
   return (
    
       <div className={styles.task}>
-        {/* <DropDown/> */}
+        <DropDown/>
         <TaskBarHeader />
         {task.tasks.map((item) => {
           return <TaskBar task={item} onDelete={delTaskFunc} onComplete={completeTaskFunc} onReject={rejectTaskFunc} user={login.user} />

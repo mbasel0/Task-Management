@@ -79,7 +79,7 @@ export default function TaskBar({ onDelete, onComplete, onReject, user, task, })
                      <FontAwesomeIcon cursor="pointer" onClick={() => onDelete(id)} className={"ml-2"} icon={faTrashAlt} />
                   </Col>
                   <Col sm={"6"}>
-                     <div className={`${style.status} ${status === 2 ? style.rejected : style.completed} `}>
+                     <div className={`${style.status} ${status === 2 ? style.rejected : style.completed } `}>
                         <span>{getStatus(status)}</span>
                      </div>
                   </Col>
