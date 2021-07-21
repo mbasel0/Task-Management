@@ -1,80 +1,29 @@
-$red:"red";
-$green:"green";
-$soft:"soft";
-
-.taskBar{
-    background-color: white;
-    border-top: 1px solid #f7f7f7;
-    padding: 10px;
-    text-align: left;
-    
-    span{
-        color: #181616;
-        font-size: 16px;
-        font-weight: bold;
-    }
-    .status{
-        background: #d0e9d1;
-        border-radius: 15px;
-        text-align: center;
-        &.rejected {
-            background-color: #fa3f3f;
-           }  
-           &.completed {
-            background-color: #437fff;
-           }        
-        span{
-          color: #e9ecef;
-        }
-        $colors: (
-            'tangerine': (
-              100: #391f00,
-              90: #4c2a00,
-              80: #663800,
-              70: #884b00,
-              60: #b56400,
-              50: #f28b00,
-              40: #f5a83f,
-              30: #f7bd6f,
-              20: #f9ce93,
-              10: #fadaae
-            ),
-            'cornflower': (
-              100: #191f3b,
-              90: #22294f,
-              80: #2d3769,
-              70: #3c4a8c,
-              60: #5163bb,
-              50: #6c84fa,
-              40: #90a2fb,
-              30: #acb9fc,
-              20: #c0cbfc,
-              10: #d0d8fd
-            ),
-            'fire-engine-red': (
-              100: #3b0000,
-              90: #4e0000,
-              80: #690000,
-              70: #8c0000,
-              60: #ba0000,
-              50: #f90000,
-              40: #fa3f3f,
-              30: #fb6f6f,
-              20: #fc9393,
-              10: #fdaeae
-            ),
-            'lightish-green': (
-              100: #153217,
-              90: #1c421f,
-              80: #255929,
-              70: #327637,
-              60: #439e4a,
-              50: #5ad363,
-              40: #83de8a,
-              30: #a2e6a7,
-              20: #b9ecbd,
-              10: #caf1cd
-            )
-          );
-    }
+.routeHeader {
+  text-align: left;
+  padding: 10px;
+  margin-left: 10px;
+}
+.routeBox {
+  background: #b9a0b5;
+  border: none;
+  padding: 8px 3px;
+  border-radius: 5px;
+  span {
+    color: #f1f1f1;
+    font-size: 18px;
+    padding: 2px 10px;
+    font-weight: bold;
+  }
+}
+.createBox{
+  text-align: right;
+  margin-right: 8px;
+}
+.routeSpan {
+  font-weight: bold;
+  font-size: 20px;
+  color: #343a40;
+}
+.deneme:hover{
+  color: #b9a0b5;
 }

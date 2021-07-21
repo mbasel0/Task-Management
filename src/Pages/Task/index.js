@@ -15,10 +15,10 @@ import { getTasks, deleteTask, completeTask, rejectTask } from "./actions"
 import { makeSelectTask } from "./selector"
 import { Link } from "react-router-dom";
 import { makeSelectLogin } from "../Auth/Login/selector";
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faPlus, faWindowClose } from '@fortawesome/free-solid-svg-icons'
 import DropDown from "../../Components/DropDown";
+import RouteHeader from "../../Components/RouteHeader";
 
 
 
@@ -31,15 +31,16 @@ export function Task({ getTasksFunc, task, delTaskFunc, completeTaskFunc, reject
   }, []);
 
   return (
-   
+    <div>
+      <RouteHeader/>
       <div className={styles.task}>
-        <DropDown/>
         <TaskBarHeader />
         {task.tasks.map((item) => {
           return <TaskBar task={item} onDelete={delTaskFunc} onComplete={completeTaskFunc} onReject={rejectTaskFunc} user={login.user} />
         })}
       </div>
-  
+    </div>
+
   );
 }
 
