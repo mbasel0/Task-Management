@@ -11,7 +11,7 @@ A bit responsive design with bootstrap and media query.
 Live Demo  ( Heroku )
 https://piscine-choucroute-42469.herokuapp.com
 
-There may be slowdowns due heroku.
+There may be slowdowns due to heroku.
 
 Login Credentials 
 
