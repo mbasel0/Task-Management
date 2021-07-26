@@ -1,22 +1,20 @@
-import { icon } from "@fortawesome/fontawesome-svg-core";
 import React from "react";
-import { Col, Row, Button } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import style from "./style.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckSquare, faEdit, faHouseUser, faTrashAlt, faWindowClose } from '@fortawesome/free-solid-svg-icons'
-import clsx from 'clsx'
+import { faHouseUser } from '@fortawesome/free-solid-svg-icons'
 
 
 
-export default function RouteHeader({ }) {
+export default function RouteHeader({ scrollTop }) {
    return (
       <div className={style.routeHeader}>
          <Row>
             <Col md="4">
                <Row>
                   <Col md="4">
-                     <FontAwesomeIcon cursor="pointer" className={style.deneme} icon={faHouseUser} size="2x" />
+                     <FontAwesomeIcon onClick={(() => window.scrollTo(0, 0))} cursor="pointer" className={style.homeButton} icon={faHouseUser} size="2x" />
                   </Col>
                   <Col md="4">
                      <Link to="/task/myTasks" className={style.routeBox}>

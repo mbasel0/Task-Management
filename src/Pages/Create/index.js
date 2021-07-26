@@ -12,7 +12,9 @@ import "../../App.css";
 import { create } from "./actions"
 import { } from "./selector"
 import FormGroup from "./form"
-
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 
 const key = "create";
 export function Create({ createFunc }) {
@@ -21,6 +23,13 @@ export function Create({ createFunc }) {
 
   return (
     <div className={styles.create}>
+      <Row className={styles.backButton}>
+        <Col md="12">
+          <Link to="/task">
+            <FontAwesomeIcon icon={faBackspace} size='2x' color="#9e9e9e" />
+          </Link>
+        </Col>
+      </Row>
       <Container>
         <Row className="mt-40">
           <Col xs={"12"}>

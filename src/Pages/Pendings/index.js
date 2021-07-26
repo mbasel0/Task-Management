@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faBackspace, } from '@fortawesome/free-solid-svg-icons'
 import { makeSelectLogin } from "../Auth/Login/selector";
-
+import { Col, Row } from "react-bootstrap";
 
 
 const key = "pendings";
@@ -29,9 +29,13 @@ export function PendingTasks({ getPendingsFunc, task, delTaskFunc, login }) {
 
   return (
     <div className={styles.task}>
-      <Link to="/task">
-        <FontAwesomeIcon icon={faBackspace} size='2x' />
-      </Link>
+      <Row className={styles.backButton}>
+        <Col md="12">
+          <Link to="/task">
+            <FontAwesomeIcon icon={faBackspace} size='2x' color="#9e9e9e"/>
+          </Link>
+        </Col>
+      </Row>
       <TaskBarHeader />
       {task.pendings.map((item) => {
         return <TaskBar user={login.user} task={item} onDelete={delTaskFunc}  />

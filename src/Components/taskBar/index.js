@@ -75,7 +75,10 @@ export default function TaskBar({ onDelete, onComplete, onReject, user, task, })
                   <Col sm={"6"}>
                      <FontAwesomeIcon cursor="pointer" onClick={() => onReject(id)} icon={faWindowClose} color="#fa3f3f" />
                      <FontAwesomeIcon cursor="pointer" onClick={() => onComplete(id)} className={"ml-2"} icon={faCheckSquare} color="#439e4a" />
-                     <FontAwesomeIcon cursor="pointer" className={"ml-2"} icon={faEdit} />
+                     <Link to={`/task/uptade/${id}`}>
+                          <FontAwesomeIcon cursor="pointer" className={"ml-2"} icon={faEdit} color="black" />
+                     </Link>
+                   
                      <FontAwesomeIcon cursor="pointer" onClick={() => onDelete(id)} className={"ml-2"} icon={faTrashAlt} />
                   </Col>
                   <Col sm={"6"}>
